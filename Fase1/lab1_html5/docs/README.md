@@ -277,7 +277,7 @@ Para realizar la prueba local se puede utilizar:
 ```bash
 cd Experiencias_de_Trabajo/Experiencia2
 
-php -S localhost:8000
+python -m http.server 80
 ```
 
 Luego se accede desde el navegador a:
