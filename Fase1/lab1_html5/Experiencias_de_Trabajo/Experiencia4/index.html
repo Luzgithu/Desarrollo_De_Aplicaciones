@@ -1,0 +1,263 @@
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+    <title>Experiencia de Metadata HTML5</title>
+
+    <meta
+        name="description"
+        content="Página desarrollada para la experiencia de práctica sobre metadata en HTML5, incluyendo title, charset, descripción, Open Graph y Twitter Cards."
+    >
+
+   <meta
+        property="og:title"
+        content="Experiencia de Metadata HTML5"
+    >
+   <meta
+        property="og:type"
+        content="website"
+    >
+
+    <meta
+        property="og:image"
+        content="https://example.com/imagen.jpg"
+    >
+
+    <meta
+        property="og:url"
+        content="https://example.com/"
+    >
+
+    <meta
+        name="twitter:card"
+        content="summary_large_image"
+    >
+
+    <meta
+        name="twitter:site"
+        content="@usuario"
+    >
+
+    <style>
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        section {
+            margin-top: 40px;
+            padding: 20px;
+            border: 1px solid #CCC;
+            border-radius: 10px;
+        }
+
+        code {
+            background-color: #EEE;
+            padding: 3px 6px;
+            border-radius: 4px;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <header>
+
+        <h1>
+            Experiencia de Práctica N.° 04: Metadata
+        </h1>
+
+        <p>
+            En esta experiencia se estudian diferentes elementos de
+            metadata utilizados dentro de la cabecera
+            <code>&lt;head&gt;</code> de un documento HTML5.
+        </p>
+
+    </header>
+
+    <section>
+
+        <h2>
+            A) Análisis de un ejemplo sencillo
+        </h2>
+
+        <p>
+            El elemento <code>&lt;title&gt;</code> permite establecer
+            el título del documento HTML.
+        </p>
+
+        <p>
+            El contenido del elemento <code>&lt;title&gt;</code>
+            puede observarse en la pestaña del navegador.
+        </p>
+
+        <p>
+            En esta página se ha utilizado:
+        </p>
+
+        <pre>
+            &lt;title&gt;Experiencia de Metadata HTML5&lt;/title&gt;
+        </pre>
+
+    </section>
+
+    <section>
+
+        <h2>
+            B) Experimenta con la codificación de caracteres
+        </h2>
+
+        <p>
+            En la cabecera del documento se estableció la codificación
+            UTF-8 mediante:
+        </p>
+
+        <pre>
+            &lt;meta charset="UTF-8"&gt;
+        </pre>
+
+        <p>
+            Ejemplo en japonés:
+        </p>
+
+        <p>
+            ご飯が熱い。
+        </p>
+
+    </section>
+
+    <section>
+
+        <h2>
+            C) Uso de la descripción en los motores de búsqueda
+        </h2>
+
+        <p>
+            La etiqueta
+            <code>&lt;meta name="description"&gt;</code>
+            permite proporcionar una descripción acerca del contenido
+            de una página web.
+        </p>
+
+        <p>
+            En esta página se utilizó:
+        </p>
+
+        <pre>
+          &lt;meta
+              name="description"
+              content="Página desarrollada para la experiencia de práctica sobre metadata en HTML5..."
+          &gt;
+        </pre>
+
+    </section>
+
+    <section>
+
+        <h2>
+            D) Uso de Open Graph
+        </h2>
+
+        <p>
+            Open Graph utiliza metadatos que permiten describir una
+            página web cuando esta es compartida.
+        </p>
+
+        <p>
+            Las propiedades utilizadas en esta experiencia son:
+        </p>
+
+        <ul>
+            <li>
+                <code>og:title</code>
+            </li>
+
+            <li>
+                <code>og:type</code>
+            </li>
+
+            <li>
+                <code>og:image</code>
+            </li>
+
+            <li>
+                <code>og:url</code>
+            </li>
+        </ul>
+
+        <pre>
+          &lt;meta
+              property="og:title"
+              content="Experiencia de Metadata HTML5"
+          &gt;
+
+          &lt;meta
+              property="og:type"
+              content="website"
+          &gt;
+
+          &lt;meta
+              property="og:image"
+              content="https://example.com/imagen.jpg"
+          &gt;
+
+          &lt;meta
+              property="og:url"
+              content="https://example.com/"
+          &gt;
+        </pre>
+
+    </section>
+
+    <section>
+
+        <h2>
+            E) Uso de Twitter Cards
+        </h2>
+
+        <p>
+            Las Twitter Cards permiten establecer metadatos para
+            controlar la forma en que una página puede presentarse
+            al ser compartida en Twitter.
+        </p>
+
+        <p>
+            En este ejemplo se utiliza una tarjeta del tipo
+            <code>summary_large_image</code>.
+        </p>
+
+        <pre>
+          &lt;meta
+              name="twitter:card"
+              content="summary_large_image"
+          &gt;
+
+          &lt;meta
+              name="twitter:site"
+              content="@usuario"
+          &gt;
+        </pre>
+
+    </section>
+
+
+</body>
+
+</html>
