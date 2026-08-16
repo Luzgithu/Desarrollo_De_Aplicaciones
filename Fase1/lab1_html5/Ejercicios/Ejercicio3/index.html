@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>MacBook Neo - Especificaciones Técnicas</title>
+    
+    <!-- Metadata básica -->
+    <meta name="description" content="Descubre la nueva MacBook Neo, potencia y diseño en un solo lugar.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="MacBook Neo - Especificaciones Técnicas - Lab 1">
+    <meta property="og:description" content="Ejercicio Propuesto 3">
+    <meta property="og:image" content="macbook_neo_indigo_teclado.jpg">
+    <meta property="og:url" content="index.html">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MacBook Neo">
+    <meta name="twitter:description" content="Ejercicio Propuesto 3">
+    <meta name="twitter:image" content="macbook_neo_indigo_teclado.jpg">
+
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; }
+        
+        .layout-columnas { display: flex; gap: 30px; margin-top: 20px; }
+        
+        .carrusel { width: 400px; }
+        .especificaciones { flex: 1; }
+        
+        table { width: 50%; border-collapse: collapse; margin-top: 10px; }
+        caption { font-weight: bold; margin-bottom: 10px; text-align: right; }
+        th, td { border: 1px solid #ccc; padding: 10px; text-align: left; }
+        th { background-color: #f4f4f4; }
+        
+        .footer-pagina, .footer-articulo { margin-top: 40px; font-size: 0.9em; color: #555; border-top: 1px solid #eee; padding-top: 10px; }
+    </style>
+</head>
+<body>
+    <main>
+        <article>
+            <header>
+                <h2>MacBook Neo</h2>
+                <p>La revolución en portátiles ultraligeros.</p>
+            </header>
+
+            <!-- Este DIV no tiene valor semántico, solo sirve para el diseño de 2 columnas -->
+            <div class="layout-columnas">
+                <section class="carrusel">
+                    <h3>Vista del Equipo</h3>
+                    <img src="macbook_neo.jpeg" alt="Vista frontal de la MacBook Neo con pantalla encendida" width="400">
+                </section>
+                <section class="especificaciones">
+                    <h3>Detalles de Hardware</h3>
+                    
+                    <table>
+                        <caption>Especificaciones técnicas del modelo base</caption>
+                        
+                        <thead>
+                            <tr>
+                                <th>Componente</th>
+                                <th>Descripción</th>
+                            </tr>
+                        </thead>
+                        
+                        <tbody>
+                            <tr>
+                                <td>Procesador</td>
+                                <td>Chip M-Neo 8-Core</td>
+                            </tr>
+                            <tr>
+                                <td>Memoria RAM</td>
+                                <td>16GB Unificada</td>
+                            </tr>
+                            <tr>
+                                <td>Almacenamiento</td>
+                                <td>512GB SSD</td>
+                            </tr>
+                            <tr>
+                                <td>Pantalla</td>
+                                <td>Retina 14 pulgadas</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+            </div>
+
+            <footer class="footer-articulo">
+                <p>
+                    Ficha técnica actualizada el 
+                    <time datetime="2026-08-15">15 de agosto de 2026</time>.
+                </p>
+            </footer>
+
+        </article>
+
+    </main>
+
+    <footer class="footer-pagina">
+        <p>&copy; 2026 Tienda Tecnológica. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
+
+
