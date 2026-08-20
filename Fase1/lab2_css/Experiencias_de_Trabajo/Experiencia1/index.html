@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Página educativa sobre OWASP API Security Top 10 2023 y los principales riesgos de seguridad en APIs.">
+
+    <meta name="author" content="Laboratorio de Desarrollo de Aplicaciones">
+
+    <title>En línea</title>
+</head>
+
+    <body style="
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #050505;
+        background-image:
+            radial-gradient(circle at top, #3b0000 0%, #120000 25%, #050505 55%),
+            repeating-linear-gradient(
+                45deg,
+                rgba(255, 0, 0, 0.025) 0px,
+                rgba(255, 0, 0, 0.025) 1px,
+                transparent 1px,
+                transparent 10px
+            );
+        color: #e5e7eb;
+        min-height: 100vh;
+    ">
+    <header style="
+        background:
+            linear-gradient(
+                180deg,
+                rgba(80, 0, 0, 0.95),
+                rgba(12, 12, 12, 0.98)
+            );
+        color: white;
+        text-align: center;
+        padding: 65px 20px;
+        border-bottom: 2px solid #dc2626;
+        box-shadow: 0 5px 30px rgba(220, 38, 38, 0.35);
+    ">
+
+        <p style="
+            margin: 0 0 10px 0;
+            color: #ef4444;
+            font-family: monospace;
+            font-weight: bold;
+            letter-spacing: 3px;
+        ">
+            [ API SECURITY ]
+        </p>
+
+        <h1 style="
+            margin: 0;
+            font-size: 44px;
+            color: #ffffff;
+            text-shadow: 0 0 15px rgba(239, 68, 68, 0.8);
+        ">
+            OWASP API Security Top 10
+        </h1>
+
+        <p style="
+            font-size: 19px;
+            margin-top: 15px;
+            margin-bottom: 5px;
+            color: #d1d5db;
+        ">
+            Principales riesgos de seguridad en APIs
+        </p>
+
+        <p style="
+            font-size: 15px;
+            color: #ef4444;
+            margin: 0;
+            font-family: monospace;
+        ">
+            OWASP API Security Top 10 // 2023
+        </p>
+
+    </header>
+    <nav style="
+        background-color: #090909;
+        padding: 18px;
+        text-align: center;
+        border-bottom: 1px solid #7f1d1d;
+    ">
+
+        <a href="#inicio"
+            style="
+                color: #f87171;
+                text-decoration: none;
+                margin: 0 18px;
+                font-weight: bold;
+                font-family: monospace;
+            ">
+            ./inicio
+        </a>
+
+        <a href="#api"
+            style="
+                color: #f87171;
+                text-decoration: none;
+                margin: 0 18px;
+                font-weight: bold;
+                font-family: monospace;
+            ">
+            ./apis
+        </a>
+
+        <a href="#owasp"
+            style="
+                color: #f87171;
+                text-decoration: none;
+                margin: 0 18px;
+                font-weight: bold;
+                font-family: monospace;
+            ">
+            ./owasp_top10
+        </a>
+
+        <a href="#proteccion"
+            style="
+                color: #f87171;
+                text-decoration: none;
+                margin: 0 18px;
+                font-weight: bold;
+                font-family: monospace;
+            ">
+            ./security
+        </a>
+
+    </nav>
+
+    <main style="
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 35px 20px;
+    ">
+
+        <section id="inicio" style="
+            background-color: #101010;
+            padding: 30px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            border: 1px solid #3f3f46;
+            border-top: 2px solid #dc2626;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+            border-bottom: 2px solid #dc2626;
+        ">
+
+            <h2 style="
+                font-size: 28px;
+                color: #ef4444;
+                margin: 0;
+                font-family: monospace;
+            ">
+                Seguridad en APIs
+            </h2>
+            <p style="
+                color: #b6b6b6;
+                line-height: 1.7;
+                font-size: 16px;
+            ">
+                Las APIs permiten la comunicación entre diferentes aplicaciones,
+                servicios y sistemas. Debido a que manejan información y
+                funcionalidades importantes, también representan una superficie
+                que debe ser protegida frente a accesos no autorizados, abuso de
+                recursos y errores de configuración.
+            </p>
+
+            <p style="
+                color: #b6b6b6;
+                line-height: 1.7;
+                font-size: 16px;
+            ">
+                El OWASP API Security Top 10 reúne riesgos importantes que deben
+                considerarse al diseñar, desarrollar y evaluar la seguridad de
+                una API.
+            </p>
+
+        </section>
+
+        <section id="api" style="
+            background-color: #101010;
+            padding: 30px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            border: 1px solid #3f3f46;
+            border-top: 2px solid #dc2626;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+            border-bottom: 2px solid #dc2626;
+        ">
+
+            <h2 style="
+                color: #ef4444;
+                text-decoration: none;
+                margin: 0 18px;
+                font-weight: bold;
+                font-family: monospace;
+            ">
+                ¿Cómo trabajan las APIs?
+            </h2>
+
+            <p style="
+                color: #b6b6b6;
+                line-height: 1.7;
+            ">
+                Existen diferentes tecnologías y arquitecturas utilizadas
+                para implementar APIs. Entre las estudiadas se encuentran
+                REST, GraphQL, gRPC y SOAP.
+            </p>
+
+            <article style="
+                background-color: #151515;
+                padding: 22px;
+                margin-top: 20px;
+                border-left: 5px solid #dc2626;
+                border-radius: 6px;
+                box-shadow: 0 0 15px rgba(220, 38, 38, 0.08);
+            ">
+
+                <h3 style="
+                    color: #ef4444;
+                    margin-top: 0;
+                    font-family: monospace;
+                ">
+                    [ REST ] Representational State Transfer - Roy Fielding, 2000
+                </h3>
+
+                <ul style="
+                    color: #b6b6b6;
+                    line-height: 1.8;
+                    padding-left: 22px;
+                    margin-bottom: 0;
+                ">
+                    <li>
+                        Arquitectura basada en RECURSOS identificados por URLs.
+                    </li>
+                    <li>
+                      Usa verbos <strong style="color: #ef4444;">HTTP</strong> nativos: <strong style="color: #ef4444;">GET</strong>, <strong style="color: #ef4444;">POST</strong>, <strong style="color: #ef4444;">PUT</strong>, <strong style="color: #ef4444">PATCH</strong>,<strong style="color: #ef4444"> DELETE</strong>.
+                    </li>
+                    <li>
+                      Formato: <strong style="color: #ef4444;">JSON</strong> (ligero, legible por humanos, clave valor).
+                    </li>
+                    <li>
+                        
+
+            </article>
+            <article style="
+                background-color: #151515;
+                padding: 22px;
+                margin-top: 20px;
+                border-left: 5px solid #ef4444;
+                border-radius: 6px;
+            ">
+
+                <h3 style="
+                    color: #ef4444;
+                    margin-top: 0;
+                    font-family: monospace;
+                ">
+                    [ GraphQL ]
+                </h3>
+
+                <ul style="
+                    color: #b6b6b6;
+                    line-height: 1.8;
+                    padding-left: 22px;
+                    margin-bottom: 0;
+                ">
+
+                    <li>
+                        Un solo endpoint:
+                        <span style="
+                            font-family: monospace;
+                            color: #fca5a5;
+                            background-color: #290909;
+                            padding: 2px 6px;
+                            border-radius: 4px;
+                        ">
+                            /graphql
+                        </span>
+                        para todo.
+                    </li>
+
+                    <li>
+                        El cliente decide qué campos recibir
+                        <strong style="color: #e5e7eb;">
+                            (Query Language).
+                        </strong>
+                    </li>
+
+                    <li>
+                        Elimina
+                        <strong style="color: #f87171;">over-fetching</strong>
+                        y
+                        <strong style="color: #f87171;">under-fetching</strong>.
+                    </li>
+
+                    <li>
+                        Schema con tipos fuertes e introspección automática.
+                    </li>
+
+                    <li>
+                        Operaciones:
+                        <strong style="color: #f87171;">query</strong> (leer),
+                        <strong style="color: #f87171;">mutation</strong> (escribir) y
+                        <strong style="color: #f87171;">subscription</strong> (real-time).
+                    </li>
+
+                    <li>
+                        <strong style="color: #ef4444;">Debilidad:</strong>
+                        complejidad en caché y problema de
+                        <strong style="color: #f87171;">N+1 queries</strong>,
+                        donde el servidor realiza una consulta inicial y luego
+                        consultas adicionales para los elementos solicitados.
+                    </li>
+
+                </ul>
+
+            </article>
+            <article style="
+                background-color: #f7f9fc;
+                padding: 22px;
+                margin-top: 20px;
+                border-left: 5px solid #059669;
+                border-radius: 8px;
+            ">
+
+                <h3 style="
+                    color: #047857;
+                    margin-top: 0;
+                ">
+                    gRPC
+                </h3>
+
+                <p style="
+                    line-height: 1.6;
+                    color: #4b5563;
+                    margin-bottom: 0;
+                ">
+                    Permite realizar llamadas a funciones remotas utilizando
+                    Protocol Buffers. Trabaja con HTTP/2 y es utilizado
+                    especialmente en microservicios, IoT y sistemas de alto
+                    rendimiento.
+                </p>
+
+            </article>
+
+            <article style="
+                background-color: #f7f9fc;
+                padding: 22px;
+                margin-top: 20px;
+                border-left: 5px solid #d97706;
+                border-radius: 8px;
+            ">
+
+                <h3 style="
+                    color: #b45309;
+                    margin-top: 0;
+                ">
+                    SOAP
+                </h3>
+
+                <p style="
+                    line-height: 1.6;
+                    color: #4b5563;
+                    margin-bottom: 0;
+                ">
+                    Protocolo basado en XML que utiliza una estructura
+                    Envelope, Header y Body. Emplea contratos WSDL y se
+                    encuentra principalmente en sistemas empresariales,
+                    banca, gobierno y plataformas legacy.
+                </p>
+
+            </article>
+
+        </section>
+
+        <section id="owasp" style="
+            background-color: white;
+            padding: 30px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+        ">
+
+            <h2 style="
+                color: #1f2d49;
+                margin-top: 0;
+                font-size: 28px;
+            ">
+                OWASP API Security Top 10 - 2023
+            </h2>
+
+            <p style="
+                color: #4b5563;
+                line-height: 1.7;
+                margin-bottom: 30px;
+            ">
+                Los siguientes riesgos representan diferentes problemas
+                relacionados con autorización, autenticación, consumo de
+                recursos, lógica de negocio, configuración y administración
+                de APIs.
+            </p>
+
+            <article style="
+                background-color: #fff7f7;
+                padding: 25px;
+                margin-bottom: 18px;
+                border-left: 6px solid #dc2626;
+                border-radius: 8px;
+            ">
+
+                <span style="
+                    background-color: #dc2626;
+                    color: white;
+                    padding: 5px 10px;
+                    border-radius: 5px;
+                    font-weight: bold;
+                ">
+                    API1:2023
+                </span>
+
+                <h3 style="
+                    color: #991b1b;
+                    margin-bottom: 10px;
+                ">
+                    Broken Object Level Authorization - BOLA
+                </h3>
+
+                <p style="
+                    line-height: 1.6;
+                    color: #4b5563;
+                ">
+                    Aparece cuando una API trabaja con identificadores de
+                    objetos pero no verifica correctamente si el usuario
+                    autenticado tiene autorización para acceder al recurso.
+                </p>
+
+                <p style="
+                    line-height: 1.6;
+                    margin-bottom: 0;
+                ">
+                    <strong>Ejemplo:</strong>
+                    modificar el ID de un usuario en una petición para intentar
+                    acceder a información perteneciente a otra cuenta.
+                </p>
+
+            </article>
+
+
+            <!-- API 2 -->
+
+            <article style="
+                background-color: #fff7f7;
+                padding: 25px;
+                margin-bottom: 18px;
+                border-left: 6px solid #dc2626;
+                border-radius: 8px;
+            ">
+
+                <span style="
+                    background-color: #dc2626;
+                    color: white;
+                    padding: 5px 10px;
+                    border-radius: 5px;
+                    font-weight: bold;
+                ">
+                    API2:2023
+                </span>
+
+                <h3 style="
+                    color: #991b1b;
+                    margin-bottom: 10px;
+                ">
+                    Broken Authentication
+                </h3>
+
+                <p style="
+                    line-height: 1.6;
+                    color: #4b5563;
+                ">
+                    Ocurre cuando los mecanismos utilizados para identificar
+                    a los usuarios presentan fallas que permiten comprometer
+                    credenciales, tokens o mecanismos de autenticación.
+                </p>
+
+                <p style="
+                    margin-bottom: 0;
+                    line-height: 1.6;
+                ">
+                    <strong>Ejemplos:</strong>
+                    ataques de fuerza bruta, credential stuffing,
+                    problemas con JWT y reutilización de tokens.
+                </p>
+
+            </article>
+
+            <article style="
+                background-color: #fffaf0;
+                padding: 25px;
+                margin-bottom: 18px;
+                border-left: 6px solid #f59e0b;
+                border-radius: 8px;
+            ">
+
+                <span style="
+                    background-color: #f59e0b;
+                    color: white;
+                    padding: 5px 10px;
+                    border-radius: 5px;
+                    font-weight: bold;
+                ">
+                    API3:2023
+                </span>
+
+                <h3 style="
+                    color: #92400e;
+                    margin-bottom: 10px;
+                ">
+                    Broken Object Property Level Authorization
+                </h3>
+
+                <p style="
+                    line-height: 1.6;
+                    color: #4b5563;
+                ">
+                    Se relaciona con una validación incorrecta de las
+                    propiedades de los objetos que una API permite leer
+                    o modificar.
+                </p>
+
+                <p style="
+                    margin-bottom: 0;
+                    line-height: 1.6;
+                ">
+                    Puede provocar exposición excesiva de información o
+                    permitir modificaciones de propiedades que deberían
+                    estar protegidas.
+                </p>
+
+            </article>
+
+            <article style="
+                background-color: #fffaf0;
+                padding: 25px;
+                margin-bottom: 18px;
+                border-left: 6px solid #f59e0b;
+                border-radius: 8px;
+            ">
+
+                <span style="
+                    background-color: #f59e0b;
+                    color: white;
+                    padding: 5px 10px;
+                    border-radius: 5px;
+                    font-weight: bold;
+                ">
+                    API4:2023
+                </span>
+
+                <h3 style="
+                    color: #92400e;
+                    margin-bottom: 10px;
+                ">
+                    Unrestricted Resource Consumption
+                </h3>
+
+                <p style="
+                    line-height: 1.6;
+                    color: #4b5563;
+                ">
+                    Las peticiones realizadas a una API consumen CPU,
+                    memoria, almacenamiento y ancho de banda. Si no existen
+                    límites adecuados, estos recursos pueden agotarse.
+                </p>
+
+                <ul style="
+                    line-height: 1.8;
+                    color: #374151;
+                    margin-bottom: 0;
+                ">
+                    <li>Ausencia de rate limiting.</li>
+                    <li>Archivos sin límite de tamaño.</li>
+                    <li>Paginación sin restricciones.</li>
+                    <li>Abuso de servicios SMS o correo.</li>
+                </ul>
+
+            </article>
+
+            <article style="
+                background-color: #fff7f7;
+                padding: 25px;
+                margin-bottom: 18px;
+                border-left: 6px solid #dc2626;
+                border-radius: 8px;
+            ">
+
+                <span style="
+                    background-color: #dc2626;
+                    color: white;
+                    padding: 5px 10px;
+                    border-radius: 5px;
+                    font-weight: bold;
+                ">
+                    API5:2023
+                </span>
+
+                <h3 style="
+                    color: #991b1b;
+                    margin-bottom: 10px;
+                ">
+                    Broken Function Level Authorization - BFLA
+                </h3>
+
+                <p style="
+                    line-height: 1.6;
+                    color: #4b5563;
+                ">
+                    Aparece cuando una API no controla correctamente qué
+                    funciones puede ejecutar cada rol o tipo de usuario.
+                </p>
+
+                <p style="
+                    margin-bottom: 0;
+                    line-height: 1.6;
+                ">
+                    <strong>Ejemplo:</strong>
+                    un usuario regular consigue acceder a funciones
+                    administrativas destinadas exclusivamente a administradores.
+                </p>
+
+            </article>
+
+            <article style="
+                background-color: #f5f8ff;
+                padding: 25px;
+                margin-bottom: 18px;
+                border-left: 6px solid #2563eb;
+                border-radius: 8px;
+            ">
+
+                <span style="
+                    background-color: #2563eb;
+                    color: white;
+                    padding: 5px 10px;
+                    border-radius: 5px;
+                    font-weight: bold;
+                ">
+                    API6:2023
+                </span>
+
+                <h3 style="
+                    color: #1e40af;
+                    margin-bottom: 10px;
+                ">
+                    Unrestricted Access to Sensitive Business Flows
+                </h3>
+
+                <p style="
+                    line-height: 1.6;
+                    color: #4b5563;
+                ">
+                    Se produce cuando funcionalidades importantes para el
+                    negocio pueden utilizarse de manera automatizada y
+                    abusiva sin suficientes controles.
+                </p>
+
+                <ul style="
+                    line-height: 1.8;
+                    color: #374151;
+                    margin-bottom: 0;
+                ">
+                    <li>Compra automatizada masiva de tickets.</li>
+                    <li>Abuso de programas de referidos.</li>
+                    <li>Spam automatizado.</li>
+                    <li>Abuso de cupones y descuentos.</li>
+                </ul>
+
+            </article>
+
+            <article style="
+                background-color: #f5f8ff;
+                padding: 25px;
+                margin-bottom: 18px;
+                border-left: 6px solid #2563eb;
+                border-radius: 8px;
+            ">
+
+                <span style="
+                    background-color: #2563eb;
+                    color: white;
+                    padding: 5px 10px;
+                    border-radius: 5px;
+                    font-weight: bold;
+                ">
+                    API7:2023
+                </span>
+
+                <h3 style="
+                    color: #1e40af;
+                    margin-bottom: 10px;
+                ">
+                    Server-Side Request Forgery - SSRF
+                </h3>
+
+                <p style="
+                    line-height: 1.6;
+                    color: #4b5563;
+                ">
+                    Ocurre cuando una API obtiene un recurso remoto utilizando
+                    una URI proporcionada por un usuario sin validarla
+                    correctamente.
+                </p>
+
+                <p style="
+                    line-height: 1.6;
+                    margin-bottom: 0;
+                ">
+                    Funciones como webhooks, carga de imágenes mediante URL
+                    e integraciones externas pueden convertirse en posibles
+                    vectores de este problema.
+                </p>
+
+            </article>
+
+            <article style="
+                background-color: #f5f8ff;
+                padding: 25px;
+                margin-bottom: 18px;
+                border-left: 6px solid #2563eb;
+                border-radius: 8px;
+            ">
+
+                <span style="
+                    background-color: #2563eb;
+                    color: white;
+                    padding: 5px 10px;
+                    border-radius: 5px;
+                    font-weight: bold;
+                ">
+                    API8:2023
+                </span>
+
+                <h3 style="
+                    color: #1e40af;
+                    margin-bottom: 10px;
+                ">
+                    Security Misconfiguration
+                </h3>
+
+                <p style="
+                    line-height: 1.6;
+                    color: #4b5563;
+                ">
+                    Las configuraciones incorrectas en servidores,
+                    frameworks o servicios que soportan una API pueden
+                    exponer información o aumentar la superficie de ataque.
+                </p>
+
+                <ul style="
+                    line-height: 1.8;
+                    color: #374151;
+                    margin-bottom: 0;
+                ">
+                    <li>CORS configurado incorrectamente.</li>
+                    <li>Errores demasiado detallados.</li>
+                    <li>Métodos HTTP innecesarios.</li>
+                    <li>Swagger expuesto en producción.</li>
+                    <li>Headers de seguridad ausentes.</li>
+                </ul>
+
+            </article>
+
+            <article style="
+                background-color: #f5f8ff;
+                padding: 25px;
+                margin-bottom: 18px;
+                border-left: 6px solid #2563eb;
+                border-radius: 8px;
+            ">
+
+                <span style="
+                    background-color: #2563eb;
+                    color: white;
+                    padding: 5px 10px;
+                    border-radius: 5px;
+                    font-weight: bold;
+                ">
+                    API9:2023
+                </span>
+
+                <h3 style="
+                    color: #1e40af;
+                    margin-bottom: 10px;
+                ">
+                    Improper Inventory Management
+                </h3>
+
+                <p style="
+                    line-height: 1.6;
+                    color: #4b5563;
+                ">
+                    Una organización puede mantener versiones antiguas,
+                    endpoints olvidados o APIs no documentadas que continúan
+                    accesibles y presentan controles de seguridad insuficientes.
+                </p>
+
+                <ul style="
+                    line-height: 1.8;
+                    color: #374151;
+                    margin-bottom: 0;
+                ">
+                    <li>Versiones antiguas de APIs.</li>
+                    <li>Shadow APIs.</li>
+                    <li>Endpoints de debug.</li>
+                    <li>Servicios internos expuestos.</li>
+                </ul>
+
+            </article>
+
+            <article style="
+                background-color: #f5f8ff;
+                padding: 25px;
+                margin-bottom: 5px;
+                border-left: 6px solid #2563eb;
+                border-radius: 8px;
+            ">
+
+                <span style="
+                    background-color: #2563eb;
+                    color: white;
+                    padding: 5px 10px;
+                    border-radius: 5px;
+                    font-weight: bold;
+                ">
+                    API10:2023
+                </span>
+
+                <h3 style="
+                    color: #1e40af;
+                    margin-bottom: 10px;
+                ">
+                    Unsafe Consumption of APIs
+                </h3>
+
+                <p style="
+                    line-height: 1.6;
+                    color: #4b5563;
+                ">
+                    Ocurre cuando una aplicación confía excesivamente en
+                    información proveniente de APIs externas y procesa esos
+                    datos sin las validaciones necesarias.
+                </p>
+
+                <p style="
+                    line-height: 1.6;
+                    margin-bottom: 0;
+                ">
+                    Un servicio externo comprometido puede convertirse en
+                    un punto de entrada para afectar a los sistemas que
+                    consumen sus datos.
+                </p>
+
+            </article>
+
+        </section>
+
+        <section id="proteccion" style="
+            background-color: white;
+            padding: 30px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+        ">
+
+            <h2 style="
+                color: #1f2d49;
+                margin-top: 0;
+                font-size: 28px;
+            ">
+                Controles de seguridad
+            </h2>
+
+            <p style="
+                color: #4b5563;
+                line-height: 1.7;
+            ">
+                Los riesgos estudiados muestran la importancia de aplicar
+                controles de autenticación, autorización, validación de
+                entradas y limitaciones sobre los recursos utilizados por
+                una API.
+            </p>
+
+            <ol style="
+                color: #374151;
+                line-height: 2;
+                padding-left: 25px;
+            ">
+                <li>Verificar autorización antes de entregar recursos.</li>
+                <li>Proteger correctamente tokens y credenciales.</li>
+                <li>Aplicar límites al consumo de recursos.</li>
+                <li>Validar la información recibida.</li>
+                <li>Mantener actualizado el inventario de APIs.</li>
+                <li>Eliminar configuraciones y servicios innecesarios.</li>
+                <li>Controlar las funciones disponibles según cada rol.</li>
+            </ol>
+
+        </section>
+
+        <aside style="
+            background-color: #fff4d6;
+            border-left: 6px solid #f59e0b;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+        ">
+
+            <h3 style="
+                margin-top: 0;
+                color: #92400e;
+            ">
+                ⚠ Importante
+            </h3>
+
+            <p style="
+                line-height: 1.7;
+                color: #4b5563;
+                margin-bottom: 0;
+            ">
+                La seguridad de una API no depende únicamente de ocultar sus
+                endpoints. Es necesario controlar quién puede acceder a cada
+                recurso, qué operaciones puede realizar y qué información
+                puede leer o modificar.
+            </p>
+
+        </aside>
+
+        <div style="
+            text-align: center;
+            padding: 20px;
+            background-color: #e8eef8;
+            border-radius: 10px;
+        ">
+
+            <p style="
+                margin: 0;
+                color: #334155;
+                font-size: 17px;
+            ">
+                Una API segura requiere
+                <span style="
+                    color: #1d4ed8;
+                    font-weight: bold;
+                ">
+                    autenticación, autorización, validación y monitoreo.
+                </span>
+            </p>
+
+        </div>
+
+    </main>
+
+    <footer style="
+        background-color: #1f2d49;
+        color: white;
+        text-align: center;
+        padding: 25px 15px;
+        margin-top: 20px;
+    ">
+
+        <p style="
+            margin: 0 0 8px 0;
+            font-weight: bold;
+        ">
+            OWASP API Security Top 10 - 2023
+        </p>
+
+        <p style="
+            margin: 0;
+            color: #cbd5e1;
+            font-size: 14px;
+        ">
+            Laboratorio de Desarrollo de Aplicaciones - 2026
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
