@@ -40,7 +40,7 @@
 
       <img class="card" src="assets/og-reservas.png" alt="Interior de la Cafetería MoKaChiMo, ambiente para reservas" title="Reserva tu mesa">
 
-      <form action="/enviar" method="post" class="form card">
+      <form action="/enviar" method="post" class="form card" id="form-reserva">
         <label>Nombre
           <input type="text" name="nombre" required minlength="2" placeholder="Tu nombre">
         </label>
@@ -61,6 +61,10 @@ especial?"></textarea>
 
         <button type="submit" class="btn primary">Reservar</button>
         <button type="button" class="btn" disabled>Deshabilitado</button>
+
+        <output for="form-reserva" id="confirmacion-reserva" class="nota resaltado" hidden>
+          ✓ ¡Reserva confirmada! Te esperamos en MoKaChiMo.
+        </output>
       </form>
     </section>
   </main>
@@ -74,8 +78,24 @@ especial?"></textarea>
   </footer>
 
   <script>
-    //Solo permite reservar desde hoy en adelante
-    document.getElementById('fecha-reserva').min = new Date().toISOString().split('T')[0];
+    const inputFecha = document.getElementById('fecha-reserva');
+    inputFecha.min = new Date().toISOString().split('T')[0];
+
+    const form = document.getElementById('form-reserva');
+    const confirmacion = document.getElementById('confirmacion-reserva');
+
+    form.addEventListener('submit', function (evento) {
+      evento.preventDefault(); // Evita el envío real a /enviar (no existe backend en GitHub Pages)
+
+      if (!form.checkValidity()) {
+        form.reportValidity(); // Muestra los mensajes nativos si algo falta
+        return;
+      }
+
+      confirmacion.hidden = false;
+      form.querySelector('button[type="submit"]').textContent = 'Reservado ✓';
+      form.querySelector('button[type="submit"]').disabled = true;
+    });
   </script>
 </body>
 </html>
