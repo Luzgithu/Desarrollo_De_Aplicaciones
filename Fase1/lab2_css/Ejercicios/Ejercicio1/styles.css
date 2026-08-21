@@ -54,6 +54,20 @@ header { border-bottom: 1px solid var(--border); }
 footer { border-top: 1px solid var(--border); }
 nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 12px; }
 
+/* Imagen destacada (hero) de cada página: evita que se vea gigante / descuadrada */
+img.card {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: 280px;
+  object-fit: cover;
+  margin: 16px 0;
+  padding: 0;
+}
+@media (min-width: 640px) {
+  img.card { height: 360px; }
+}
+
 /* [USO: CLASE] */
 .menu .link {
   color: var(--primary);
