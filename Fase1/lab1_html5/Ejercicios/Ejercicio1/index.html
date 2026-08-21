@@ -1,91 +1,71 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Luz Clarita Kana Zambrano - Portafolio</title>
-<meta name="description" content="Portafolio de Luz Clarita Kana Zambrano, estudiante de Ingeniería de Sistemas interesada en ciberseguridad.">
-<style>
-  :root{--accent:#2f7a5c}
-  body{font-family:Arial,sans-serif;max-width:700px;margin:0 auto;padding:2rem 1.5rem;line-height:1.6;color:#222;background:#fafafa}
-  header{border-bottom:3px solid var(--accent);padding-bottom:1rem;margin-bottom:2rem}
-  h1{margin-bottom:0.2rem;color:#111}
-  header p{color:var(--accent);font-weight:bold}
-  h2{color:var(--accent);border-bottom:1px solid #ddd;padding-bottom:0.3rem}
-  section{margin-bottom:2rem}
-  ul{padding-left:1.2rem}
-  a{color:var(--accent)}
-  label{display:block;margin-top:0.7rem;font-weight:bold}
-  input,textarea{width:100%;padding:0.5rem;margin-top:0.2rem;border:1px solid #ccc;border-radius:4px;font-family:inherit}
-  button{margin-top:1rem;padding:0.6rem 1.2rem;background:var(--accent);color:#fff;border:none;border-radius:4px;cursor:pointer}
-  button:hover{opacity:0.9}
-  footer{text-align:center;color:#888;font-size:0.85rem;border-top:1px solid #ddd;padding-top:1rem}
-</style>
-</head>
-<body>
+<head> 
+<meta charset="UTF-8" />
+<title>Cafetería MoKaChiMo — Inicio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="Cafetería MoKaChiMo: café de especialidad, granos de
+origen y pastelería artesanal." />
 
-<header>
-  <h1>Luz Clarita Kana Zambrano</h1>
-  <p>Estudiante de Ingeniería de Sistemas</p>
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Cafetería MoKaChiMo" />
+<meta property="og:title" content="Cafetería MoKaChiMo — Inicio" />
+<meta property="og:description" content="Café de especialidad, granos de origen y pastelería artesanal." />
+<meta property="og:image" content="assets/og-inicio.png" />
+<meta property="og:url" content="index.html" />
+<meta property="og:locale" content="es_PE" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Cafetería MoKaChiMo — Inicio" />
+<meta name="twitter:description" content="Café de especialidad, granos de origen y pastelería artesanal." />
+<meta name="twitter:image" content="assets/og-inicio.png" />
+
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body id="page-inicio">
+<header class="site-header card">
+<nav class="container" aria-label="Principal">
+<a class="brand" href="index.html" title="Volver al inicio">MoKaChiMo</a>
+<ul class="menu">
+<li><a class="link" href="index.html#hero">Inicio</a></li>
+<li><a class="link" href="menu.html">Menú</a></li>
+<li><a class="link" href="reservas.html">Reservas</a></li>
+</ul>
+</nav>
 </header>
 
-<main>
-  <section aria-labelledby="sobre-mi">
-    <h2 id="sobre-mi">Sobre mí</h2>
-    <p>Estudiante de Ingeniería de Sistemas con interés en ciberseguridad.</p>
-  </section>
+  <main id="hero" class="container">
+    <section class="seccion" lang="es-PE">
+      <h1 class="titulo lead">Bienvenida/o a MoKaChiMo</h1>
+      <p class="intro">Café de especialidad, granos de origen y pastelería artesanal.</p>
 
-  <section aria-labelledby="habilidades">
-    <h2 id="habilidades">Habilidades</h2>
-    <ul>
-      <li>Ciberseguridad</li>
-      <li>HTML / CSS</li>
-      <li>Estructuras de datos y algoritmos</li>
+      <img class="card" src="assets/og-inicio.png" alt="Fachada de la Cafetería MoKaChiMo" title="Cafetería MoKaChiMo">
+
+      <!-- Contenido normal, sin “textos de prueba” visibles -->
+      <ul class="marcada">
+        <li>Origen Perú</li>
+        <li>Origen Colombia</li>
+        <li>Origen Etiopía</li>
+        <li>Origen Brasil</li>
+      </ul>
+
+      <p><a class="btn primary badge" href="menu.html" title="Ver el menú">Ver
+menú</a></p>
+    </section>
+
+    <article class="card">
+      <h2>Nuestra propuesta</h2>
+      <p>Granos tostados localmente y leche fresca.</p>
+      <p>Filtrados, espresso, cold brew y más.</p>
+    </article>
+  </main>
+
+  <footer class="site-footer container">
+    <p><small>© 2026 • Cafetería MoKaChiMo</small></p>
+    <ul class="footer-links">
+      <li><a class="link" href="assets/carta.pdf">Carta (PDF)</a></li>
+      <li><a class="link" href="https://instagram.com/colibri-cafe" target="_blank" rel="noopener">Instagram</a></li>
     </ul>
-  </section>
-
-  <section aria-labelledby="experiencia">
-    <h2 id="experiencia">Experiencia</h2>
-    <article>
-      <h3>Estudiante</h3>
-      <p>Facultad de Ingeniería de Sistemas</p>
-    </article>
-  </section>
-
-  <section aria-labelledby="proyectos">
-    <h2 id="proyectos">Proyectos</h2>
-    <article>
-      <h3>Repositorios en GitHub</h3>
-      <p>Consulta mis proyectos en <a href="https://github.com/Luzgithu">github.com/Luzgithu</a></p>
-    </article>
-  </section>
-
-  <section aria-labelledby="contacto">
-    <h2 id="contacto">Contacto</h2>
-    <address>
-      <p>Correo: <a href="mailto:luz.kana@estudiante.edu.pe">luz.kana@estudiante.edu.pe</a></p>
-      <p>GitHub: <a href="https://github.com/Luzgithu">github.com/Luzgithu</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/luz-clarita-kana-zambrano-391424429/">linkedin.com/in/luz-clarita-kana-zambrano-391424429</a></p>
-    </address>
-
-    <form action="guardar.php" method="post">
-      <label for="name">Nombre:</label>
-      <input type="text" id="name" name="user_name" required>
-
-      <label for="email">Correo:</label>
-      <input type="email" id="email" name="user_email" required>
-
-      <label for="message">Mensaje:</label>
-      <textarea id="message" name="user_message" rows="4" required></textarea>
-
-      <button type="submit">Enviar</button>
-    </form>
-  </section>
-</main>
-
-<footer>
-  <p>&copy; 2026 Luz Clarita Kana Zambrano</p>
-</footer>
-
+  </footer>
 </body>
 </html>
