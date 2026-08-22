@@ -205,8 +205,50 @@ input::placeholder { color: #b0a08e; }
   font-weight: 600;
 }
 
+/* Botones del formulario: fila en escritorio, con espacio uniforme */
+.form button.btn {
+  margin-top: 12px;
+  margin-right: 8px;
+}
+
+/* Mensaje de confirmación de reserva: separado y con su propio bloque */
+#confirmacion-reserva {
+  display: block;
+  margin-top: 14px;
+  line-height: 1.5;
+}
+
 /* [USO: CASCADA/ESPECIFICIDAD] — cadena completa: #origen p > .card p > p */
 p { color: #4b3b2f; }              /* tipo — especificidad 0-0-1 (base) */
 p { margin-bottom: 8px; }          /* mismo selector luego => gana por orden */
 .card p { color: var(--muted); }   /* clase — especificidad 0-1-1 (vence al tipo) */
 #origen p { color: var(--primary-700); } /* id — especificidad 1-0-1 (vence a clase y tipo) */
+
+/* ============================================= */
+/* RESPONSIVE MÓVIL — evita que todo se amontone  */
+/* ============================================= */
+@media (max-width: 480px) {
+  .titulo { font-size: 28px; }
+  img.card { height: 200px; }
+
+  .site-header nav.container { padding-block: 14px; }
+  .brand { font-size: 22px; }
+  .menu { gap: 6px; }
+  .menu .link { padding: 6px 8px; font-size: 14px; }
+
+  .form { padding: 12px; }
+
+  /* Los dos botones pasan a ocupar todo el ancho, uno debajo del otro */
+  .form button.btn {
+    display: block;
+    width: 100%;
+    margin: 10px 0 0;
+  }
+
+  /* El mensaje de confirmación queda separado, con su propio respiro */
+  #confirmacion-reserva {
+    margin-top: 16px;
+    padding: 10px 12px;
+    font-size: 15px;
+  }
+}
