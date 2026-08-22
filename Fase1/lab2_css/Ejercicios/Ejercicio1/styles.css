@@ -211,11 +211,21 @@ input::placeholder { color: #b0a08e; }
   margin-right: 8px;
 }
 
-/* Mensaje de confirmación de reserva: separado y con su propio bloque */
+/* Mensaje de confirmación de reserva: entra con una animación suave
+   (fade + deslizamiento), en vez de aparecer de golpe.
+   Empieza invisible y desplazado; JS agrega la clase .mostrar cuando
+   el formulario se validó correctamente. */
 #confirmacion-reserva {
   display: block;
   margin-top: 14px;
   line-height: 1.5;
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: opacity .45s ease, transform .45s ease;
+}
+#confirmacion-reserva.mostrar {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* [USO: CASCADA/ESPECIFICIDAD] — cadena completa: #origen p > .card p > p */
